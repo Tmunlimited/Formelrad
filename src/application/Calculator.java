@@ -61,5 +61,7 @@ public class Calculator {
 	}
 
 
-
+	public double calculateUFromPAndR(float p, float r) {
+		return Math.sqrt(p*r);
+	}
 }
