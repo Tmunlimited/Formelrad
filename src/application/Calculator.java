@@ -56,6 +56,10 @@ public class Calculator {
 		return r*i;
 	}
 
+	public double calculateUFromPAndI(float p, float i) {
+		return p/i;
+	}
 
+	
 	
 }
