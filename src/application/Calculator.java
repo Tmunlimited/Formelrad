@@ -49,7 +49,13 @@ public class Calculator {
 		 */
 	}
 	
-	/* Hier die Methoden mit den Formlen hinzufügen
+	/* Hier die Methoden mit den Formlen hinzufï¿½gen
 	 */
+
+	public double calculateUFromRAndI(float r, float i) {
+		return r*i;
+	}
+
+
 	
 }
