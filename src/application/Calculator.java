@@ -58,5 +58,9 @@ public class Calculator {
 		return u*i;
 	}
 	
+	public double getPfromRandI(int r, int i) {
+		return r*i*i;
+	}
+	
 	// Leistungsformlen für P Ende
 }
