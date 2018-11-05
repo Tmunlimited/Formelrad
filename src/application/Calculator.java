@@ -52,4 +52,7 @@ public class Calculator {
 	/* Hier die Methoden mit den Formlen hinzufügen
 	 */
 	
+	// Leistungsformeln für P Start
+	
+	// Leistungsformlen für P Ende
 }
