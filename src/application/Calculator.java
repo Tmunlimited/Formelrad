@@ -54,5 +54,9 @@ public class Calculator {
 	
 	// Leistungsformeln für P Start
 	
+	public double getPfromUandI(int u, int i) {
+		return u*i;
+	}
+	
 	// Leistungsformlen für P Ende
 }
