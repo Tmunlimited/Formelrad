@@ -62,5 +62,9 @@ public class Calculator {
 		return r*i*i;
 	}
 	
+	public double getPfromUandR(int u, int r) {
+		return (u*u)/r;
+	}
+	
 	// Leistungsformlen für P Ende
 }
