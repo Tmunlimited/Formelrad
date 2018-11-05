@@ -49,7 +49,19 @@ public class Calculator {
 		 */
 	}
 	
-	/* Hier die Methoden mit den Formlen hinzufügen
+	/* Hier die Methoden mit den Formlen hinzufï¿½gen
 	 */
-	
+
+	public double calculateUFromRAndI(float r, float i) {
+		return r*i;
+	}
+
+	public double calculateUFromPAndI(float p, float i) {
+		return p/i;
+	}
+
+
+	public double calculateUFromPAndR(float p, float r) {
+		return Math.sqrt(p*r);
+	}
 }
