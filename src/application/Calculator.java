@@ -52,6 +52,7 @@ public class Calculator {
 	/* Hier die Methoden mit den Formlen hinzuf�gen
 	 */
 
+
 	public double calculateUFromRAndI(float r, float i) {
 		return r*i;
 	}
@@ -64,4 +65,22 @@ public class Calculator {
 	public double calculateUFromPAndR(float p, float r) {
 		return Math.sqrt(p*r);
 	}
+
+	
+	// Leistungsformeln f�r P Start
+	
+	public double getPfromUandI(int u, int i) {
+		return u*i;
+	}
+	
+	public double getPfromRandI(int r, int i) {
+		return r*i*i;
+	}
+	
+	public double getPfromUandR(int u, int r) {
+		return (u*u)/r;
+	}
+	
+	// Leistungsformlen f�r P Ende
+
 }
