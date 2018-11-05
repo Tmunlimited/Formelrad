@@ -52,4 +52,19 @@ public class Calculator {
 	/* Hier die Methoden mit den Formlen hinzufügen
 	 */
 	
+	// Leistungsformeln für P Start
+	
+	public double getPfromUandI(int u, int i) {
+		return u*i;
+	}
+	
+	public double getPfromRandI(int r, int i) {
+		return r*i*i;
+	}
+	
+	public double getPfromUandR(int u, int r) {
+		return (u*u)/r;
+	}
+	
+	// Leistungsformlen für P Ende
 }
