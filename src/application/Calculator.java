@@ -83,4 +83,10 @@ public class Calculator {
 	
 	// Leistungsformlen f�r P Ende
 
+	
+	// Current Formulas for I Start
+	
+
+
+	// Current Formulas for I End
 }
