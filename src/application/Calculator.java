@@ -90,5 +90,9 @@ public class Calculator {
 		return Math.sqrt(P/R);
 	}
 
+	public double getIfromPandU(double P, double U) {
+		return P/U;
+	}
+	
 	// Current Formulas for I End
 }
