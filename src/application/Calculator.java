@@ -94,5 +94,9 @@ public class Calculator {
 		return P/U;
 	}
 	
+	public double getIfromUandR(double U, double R) {
+		return U/R;
+	}
+	
 	// Current Formulas for I End
 }
