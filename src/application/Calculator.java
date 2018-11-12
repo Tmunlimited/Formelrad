@@ -86,7 +86,9 @@ public class Calculator {
 	
 	// Current Formulas for I Start
 	
-
+	public double getIfromPandR(double P, double R) {
+		return Math.sqrt(P/R);
+	}
 
 	// Current Formulas for I End
 }
