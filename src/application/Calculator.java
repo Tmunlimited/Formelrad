@@ -83,4 +83,20 @@ public class Calculator {
 	
 	// Leistungsformlen f�r P Ende
 
+	
+	// Current Formulas for I Start
+	
+	public double getIfromPandR(double P, double R) {
+		return Math.sqrt(P/R);
+	}
+
+	public double getIfromPandU(double P, double U) {
+		return P/U;
+	}
+	
+	public double getIfromUandR(double U, double R) {
+		return U/R;
+	}
+	
+	// Current Formulas for I End
 }
