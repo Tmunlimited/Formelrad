@@ -56,7 +56,7 @@ public class Calculator {
 				widerstand = calculateRFromPAndI(leistung,strom);
 			} else if(widerstand !=0) {
 				spannung = calculateUFromPAndR(leistung,spannung);
-				strom= claculateIFromPAndR(leistung,spannung);
+				strom= calculateIFromPAndR(leistung,spannung);
 			}
 		} else if(spannung!=0) {
 			if(strom!=0) {
