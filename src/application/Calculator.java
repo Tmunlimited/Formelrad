@@ -79,31 +79,31 @@ public class Calculator {
 	 */
 
 
-	public double calculateUFromRAndI(float r, float i) {
+	public double calculateUFromRAndI(double r, double i) {
 		return r*i;
 	}
 
-	public double calculateUFromPAndI(float p, float i) {
+	public double calculateUFromPAndI(double p, double i) {
 		return p/i;
 	}
 
 
-	public double calculateUFromPAndR(float p, float r) {
+	public double calculateUFromPAndR(double p, double r) {
 		return Math.sqrt(p*r);
 	}
 
 	
 	// Leistungsformeln f�r P Start
 	
-	public double calculatePfromUAndI(int u, int i) {
+	public double calculatePfromUAndI(double u, double i) {
 		return u*i;
 	}
 	
-	public double calculatePfromRAndI(int r, int i) {
+	public double calculatePfromRAndI(double r, double i) {
 		return r*i*i;
 	}
 	
-	public double calculatePfromUandR(int u, int r) {
+	public double calculatePfromUandR(double u, double r) {
 		return (u*u)/r;
 	}
 	
