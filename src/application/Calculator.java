@@ -95,15 +95,15 @@ public class Calculator {
 	
 	// Leistungsformeln f�r P Start
 	
-	public double getPfromUandI(int u, int i) {
+	public double calculatePfromUAndI(int u, int i) {
 		return u*i;
 	}
 	
-	public double getPfromRandI(int r, int i) {
+	public double calculatePfromRAndI(int r, int i) {
 		return r*i*i;
 	}
 	
-	public double getPfromUandR(int u, int r) {
+	public double calculatePfromUandR(int u, int r) {
 		return (u*u)/r;
 	}
 	
@@ -112,15 +112,15 @@ public class Calculator {
 	
 	// Current Formulas for I Start
 	
-	public double getIfromPandR(double P, double R) {
+	public double calculateIfromPandR(double P, double R) {
 		return Math.sqrt(P/R);
 	}
 
-	public double getIfromPandU(double P, double U) {
+	public double calculateIfromPandU(double P, double U) {
 		return P/U;
 	}
 	
-	public double getIfromUandR(double U, double R) {
+	public double calcuclateIfromUandR(double U, double R) {
 		return U/R;
 	}
 	
