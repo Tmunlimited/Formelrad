@@ -80,11 +80,27 @@ public class Main extends Application {
 			root.getChildren().add(btnBerechnen);
 			
 			btnBerechnen.setOnAction(e -> {
+				double leistung = 0.0;
+				double spannung = 0.0;
+				double strom = 0.0;
+				double widerstand = 0.0;
+				if(!txLeistung.getText().isEmpty()) {
+					leistung=Double.parseDouble(txLeistung.getText());
+				}
+				if(!txSpannung.getText().isEmpty()) {
+					spannung=Double.parseDouble(txSpannung.getText());
+				}
+				if(!txStrom.getText().isEmpty()) {
+					strom=Double.parseDouble(txStrom.getText());
+				}
+				if(!txWiderstand.getText().isEmpty()) {
+					widerstand=Double.parseDouble(txWiderstand.getText());
+				}
 				Calculator myCalculator = new Calculator(
-						Double.parseDouble(txLeistung.getText()),
-						Double.parseDouble(txSpannung.getText()),
-						Double.parseDouble(txStrom.getText()),
-						Double.parseDouble(txWiderstand.getText()));
+						leistung,
+						spannung,
+						strom,
+						widerstand);
 				System.out.print("Vorher:  ");
 				System.out.println(myCalculator.toString());
 				myCalculator.calculate();
