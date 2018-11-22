@@ -78,6 +78,10 @@ public class Calculator {
         return p / Math.pow(2, i);
     }
 
+    public double calculateRFromUAndP(double u, double p) {
+        return Math.pow(2, u) / p;
+    }
+
 
     // Leistungsformeln f�r P Start
 
