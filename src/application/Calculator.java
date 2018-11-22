@@ -49,6 +49,20 @@ public class Calculator {
          * welche Methode unten aufgerufen werden muss.
          */
 
+        //Decide U
+        if (spannung == 0) {
+            if (widerstand != 0 && strom != 0) {
+                this.spannung = calculateUFromRAndI(widerstand, strom);
+                this.leistung = getPfromRandI(widerstand, strom);
+            } else if (leistung != 0 && strom != 0) {
+                this.spannung = calculateUFromPAndI(leistung, strom);
+                this.widerstand = calculateRFromPAndI(leistung, strom);
+            } else if (leistung != 0 && widerstand != 0) {
+                this.spannung = calculateUFromPAndR(leistung, widerstand);
+                this.strom = 0;
+            }
+        }
+
 
     }
 
