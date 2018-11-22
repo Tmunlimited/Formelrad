@@ -64,7 +64,7 @@ public class Calculator {
 				widerstand = calculateRFromUAndI(spannung,strom);
 			} else if(widerstand!=0) {
 				leistung= calculatePFromUAndR(spannung,widerstand);
-				strom = calculateIFromUAndR(spannung,widerstand);
+				strom = calcuclateIFromUAndR(spannung,widerstand);
 			}
 		} else if (strom!=0) {
 			if(widerstand!=0) {
@@ -79,31 +79,31 @@ public class Calculator {
 	 */
 
 
-	public double calculateUFromRAndI(float r, float i) {
+	public double calculateUFromRAndI(double r, double i) {
 		return r*i;
 	}
 
-	public double calculateUFromPAndI(float p, float i) {
+	public double calculateUFromPAndI(double p, double i) {
 		return p/i;
 	}
 
 
-	public double calculateUFromPAndR(float p, float r) {
+	public double calculateUFromPAndR(double p, double r) {
 		return Math.sqrt(p*r);
 	}
 
 	
 	// Leistungsformeln f�r P Start
 	
-	public double getPfromUandI(int u, int i) {
+	public double calculatePFromUAndI(double u, double i) {
 		return u*i;
 	}
 	
-	public double getPfromRandI(int r, int i) {
+	public double calculatePFromRAndI(double r, double i) {
 		return r*i*i;
 	}
 	
-	public double getPfromUandR(int u, int r) {
+	public double calculatePFromUAndR(double u, double r) {
 		return (u*u)/r;
 	}
 	
@@ -112,15 +112,15 @@ public class Calculator {
 	
 	// Current Formulas for I Start
 	
-	public double getIfromPandR(double P, double R) {
+	public double calculateIFromPAndR(double P, double R) {
 		return Math.sqrt(P/R);
 	}
 
-	public double getIfromPandU(double P, double U) {
+	public double calculateIFromPAndU(double P, double U) {
 		return P/U;
 	}
 	
-	public double getIfromUandR(double U, double R) {
+	public double calcuclateIFromUAndR(double U, double R) {
 		return U/R;
 	}
 	
