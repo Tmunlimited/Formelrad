@@ -49,7 +49,7 @@ public class Calculator {
          * welche Methode unten aufgerufen werden muss.
          */
 
-        //Decide U
+        //Decide which U-Formula
         if (spannung == 0) {
             if (widerstand != 0 && strom != 0) {
                 this.spannung = calculateUFromRAndI(widerstand, strom);
@@ -63,7 +63,20 @@ public class Calculator {
             }
         }
 
+        //Decide which R-Formula
+        if (widerstand == 0) {
+            if (spannung != 0 && strom != 0) {
+                this.widerstand = calculateRFromUAndI(spannung, strom);
+                this.leistung = 0;
+            } else if (leistung != 0 && strom != 0) {
+                this.widerstand = calculateRFromPAndI(leistung, strom);
+                this.spannung = 0;
+            } else if (spannung != 0 && leistung != 0) {
+                this.widerstand = calculateRFromUAndP(spannung, leistung);
+                this.strom = 0;
+            }
 
+        }
     }
 
         /* Hier die Methoden mit den Formlen hinzuf�gen
