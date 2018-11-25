@@ -125,4 +125,18 @@ public class Calculator {
 	}
 	
 	// Current Formulas for I End
+	
+    //calculate R
+    public double calculateRFromUAndI(double u, double i) {
+        return u / i;
+    }
+
+    public double calculateRFromPAndI(double p, double i) {
+        return p / Math.pow(2, i);
+    }
+
+    public double calculateRFromUAndP(double u, double p) {
+        return Math.pow(2, u) / p;
+    }
+	
 }
