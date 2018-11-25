@@ -2,8 +2,8 @@ package application;
 
 /**
  * Berechnet das Formelrad
- * @author Peter Rutschmann
- * @version 13.09.2018
+ * @author Peter Rutschmann, modified by Samuel Dubler & Josua Koglin
+ * @version 25.11.18
  */
 public class Calculator {
 	private double leistung;
@@ -78,7 +78,7 @@ public class Calculator {
 	/* Hier die Methoden mit den Formlen hinzuf�gen
 	 */
 
-
+	// Leistungsformeln for U Start
 	public double calculateUFromRAndI(double r, double i) {
 		return r*i;
 	}
@@ -91,9 +91,9 @@ public class Calculator {
 	public double calculateUFromPAndR(double p, double r) {
 		return Math.sqrt(p*r);
 	}
-
+	// Current Formulas for U End
 	
-	// Leistungsformeln f�r P Start
+	// Leistungsformeln for P Start
 	
 	public double calculatePFromUAndI(double u, double i) {
 		return u*i;
@@ -107,7 +107,7 @@ public class Calculator {
 		return (u*u)/r;
 	}
 	
-	// Leistungsformlen f�r P Ende
+	// Leistungsformlen for P End
 
 	
 	// Current Formulas for I Start
@@ -126,7 +126,7 @@ public class Calculator {
 	
 	// Current Formulas for I End
 	
-    //calculate R
+	// Current Formulas for R Start
     public double calculateRFromUAndI(double u, double i) {
         return u / i;
     }
@@ -138,5 +138,5 @@ public class Calculator {
     public double calculateRFromUAndP(double u, double p) {
         return Math.pow(2, u) / p;
     }
-	
+    // Current Formulas for R End
 }
