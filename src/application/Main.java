@@ -88,6 +88,10 @@ public class Main extends Application {
 				boolean spannungSet = false;
 				boolean stromSet = false;
 				boolean widerstandSet = false;
+				txLeistung.setStyle("-fx-text-fill: black;");
+				txSpannung.setStyle("-fx-text-fill: black;");
+				txStrom.setStyle("-fx-text-fill: black;");
+				txWiderstand.setStyle("-fx-text-fill: black;");
 				if(!txLeistung.getText().isEmpty()) {
 					leistung=Double.parseDouble(txLeistung.getText());
 					leistungSet=true;
