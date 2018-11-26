@@ -133,9 +133,7 @@ public class Main extends Application {
                     txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
 
                 }
-
-                //reset counter
-                counter = 0;
+                
             });
 
             Scene scene = new Scene(root, 330, 490);
