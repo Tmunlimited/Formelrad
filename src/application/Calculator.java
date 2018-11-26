@@ -137,14 +137,17 @@ public class Calculator {
 	
 	// Current Formulas for R Start
     public double calculateRFromUAndI(double u, double i) {
+		System.out.println("Berechne R mit U: "+u+" und I: "+i+". Ergibt R= "+u/i);
         return u / i;
     }
 
     public double calculateRFromPAndI(double p, double i) {
+    	System.out.println("Berechne R mit P: "+p+" und I: "+i+". Ergibt R= "+p/Math.pow(2, i));
         return p / Math.pow(2, i);
     }
 
     public double calculateRFromUAndP(double u, double p) {
+    	System.out.println("Berechne R mit U: "+u+" und P: "+p+". Ergibt R= "+Math.pow(2, u) / p);
         return Math.pow(2, u) / p;
     }
     // Current Formulas for R End
