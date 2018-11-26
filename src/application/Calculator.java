@@ -80,15 +80,18 @@ public class Calculator {
 
 	// Leistungsformeln for U Start
 	public double calculateUFromRAndI(double r, double i) {
+		System.out.println("Berechne U mit R: "+r+" und I: "+i+". Ergibt U= "+r*i);
 		return r*i;
 	}
 
 	public double calculateUFromPAndI(double p, double i) {
+		System.out.println("Berechne U mit P: "+p+" und I: "+i+". Ergibt U= "+p/i);
 		return p/i;
 	}
 
 
 	public double calculateUFromPAndR(double p, double r) {
+		System.out.println("Berechne U mit P: "+p+" und R: "+r+". Ergibt U= "+p*r);
 		return Math.sqrt(p*r);
 	}
 	// Current Formulas for U End
