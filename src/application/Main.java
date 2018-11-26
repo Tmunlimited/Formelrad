@@ -84,17 +84,25 @@ public class Main extends Application {
 				double spannung = 0.0;
 				double strom = 0.0;
 				double widerstand = 0.0;
+				boolean leistungSet = false;
+				boolean spannungSet = false;
+				boolean stromSet = false;
+				boolean widerstandSet = false;
 				if(!txLeistung.getText().isEmpty()) {
 					leistung=Double.parseDouble(txLeistung.getText());
+					leistungSet=true;
 				}
 				if(!txSpannung.getText().isEmpty()) {
 					spannung=Double.parseDouble(txSpannung.getText());
+					spannungSet=true;
 				}
 				if(!txStrom.getText().isEmpty()) {
 					strom=Double.parseDouble(txStrom.getText());
+					stromSet=true;
 				}
 				if(!txWiderstand.getText().isEmpty()) {
 					widerstand=Double.parseDouble(txWiderstand.getText());
+					widerstandSet=true;
 				}
 				Calculator myCalculator = new Calculator(
 						leistung,
@@ -106,11 +114,22 @@ public class Main extends Application {
 				myCalculator.calculate();
 				System.out.print("Nachher: ");
 				System.out.println(myCalculator.toString());
-					
-				txLeistung.setText(Double.toString(myCalculator.getLeistung()));
-				txSpannung.setText(Double.toString(myCalculator.getSpannung()));
-				txStrom.setText(Double.toString(myCalculator.getStrom()));
-				txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+				if(!leistungSet) {
+					txLeistung.setText(Double.toString(myCalculator.getLeistung()));
+					txLeistung.setStyle("-fx-text-fill: red;");
+				}
+				if(!spannungSet) {
+					txSpannung.setText(Double.toString(myCalculator.getSpannung()));
+					txSpannung.setStyle("-fx-text-fill: red;");
+				}
+				if(!stromSet) {	
+					txStrom.setText(Double.toString(myCalculator.getStrom()));
+					txStrom.setStyle("-fx-text-fill: red;");
+				}
+				if(!widerstandSet) {
+					txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+					txWiderstand.setStyle("-fx-text-fill: red;");
+				}
 			});
 
 			Scene scene = new Scene(root, 330, 490);
