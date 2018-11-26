@@ -83,7 +83,7 @@ public class Main extends Application {
 
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setHeaderText("Achtung");
-            alert.setContentText("Bitte geben Sie nicht mehr als 3 Werte ein!");
+            alert.setContentText("Bitte geben Sie genau 2 Werte ein!");
 
 
             btnBerechnen.setOnAction(e -> {
@@ -112,7 +112,7 @@ public class Main extends Application {
                     counter++;
                 }
 
-                if (counter > 2) {
+                if (counter != 2) {
                     alert.showAndWait();
                 } else {
 
