@@ -99,17 +99,17 @@ public class Calculator {
 	// Leistungsformeln for P Start
 	
 	public double calculatePFromUAndI(double u, double i) {
-		System.out.println("Berechne P mit U: "+u+" und I: "+i+". Ergibt U= "+u*i);
+		System.out.println("Berechne P mit U: "+u+" und I: "+i+". Ergibt P= "+u*i);
 		return u*i;
 	}
 	
 	public double calculatePFromRAndI(double r, double i) {
-		System.out.println("Berechne P mit R: "+r+" und I: "+i+". Ergibt U= "+r*i*i);
+		System.out.println("Berechne P mit R: "+r+" und I: "+i+". Ergibt P= "+r*i*i);
 		return r*i*i;
 	}
 	
 	public double calculatePFromUAndR(double u, double r) {
-		System.out.println("Berechne P mit U: "+u+" und R: "+r+". Ergibt U= "+(u*u)/r);
+		System.out.println("Berechne P mit U: "+u+" und R: "+r+". Ergibt P= "+(u*u)/r);
 		return (u*u)/r;
 	}
 	
@@ -119,14 +119,17 @@ public class Calculator {
 	// Current Formulas for I Start
 	
 	public double calculateIFromPAndR(double P, double R) {
+		System.out.println("Berechne I mit P: "+P+" und R: "+R+". Ergibt I= "+Math.sqrt(P/R));
 		return Math.sqrt(P/R);
 	}
 
 	public double calculateIFromPAndU(double P, double U) {
+		System.out.println("Berechne I mit P: "+P+" und U: "+U+". Ergibt I= "+P/U);
 		return P/U;
 	}
 	
 	public double calcuclateIFromUAndR(double U, double R) {
+		System.out.println("Berechne I mit U: "+U+" und R: "+R+". Ergibt I= "+U/R);
 		return U/R;
 	}
 	
