@@ -99,14 +99,17 @@ public class Calculator {
 	// Leistungsformeln for P Start
 	
 	public double calculatePFromUAndI(double u, double i) {
+		System.out.println("Berechne P mit U: "+u+" und I: "+i+". Ergibt U= "+u*i);
 		return u*i;
 	}
 	
 	public double calculatePFromRAndI(double r, double i) {
+		System.out.println("Berechne P mit R: "+r+" und I: "+i+". Ergibt U= "+r*i*i);
 		return r*i*i;
 	}
 	
 	public double calculatePFromUAndR(double u, double r) {
+		System.out.println("Berechne P mit U: "+u+" und R: "+r+". Ergibt U= "+(u*u)/r);
 		return (u*u)/r;
 	}
 	
