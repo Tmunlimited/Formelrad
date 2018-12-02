@@ -55,8 +55,8 @@ public class Calculator {
 				spannung= calculateUFromPAndI(leistung, strom);
 				widerstand = calculateRFromPAndI(leistung,strom);
 			} else if(widerstand !=0) {
-				spannung = calculateUFromPAndR(leistung,spannung);
-				strom= calculateIFromPAndR(leistung,spannung);
+				spannung = calculateUFromPAndR(leistung,widerstand);
+				strom= calculateIFromPAndR(leistung,widerstand);
 			}
 		} else if(spannung!=0) {
 			if(strom!=0) {
@@ -78,7 +78,7 @@ public class Calculator {
 	/* Hier die Methoden mit den Formlen hinzuf�gen
 	 */
 
-	// Leistungsformeln for U Start
+	// Formulas for U Start
 	public double calculateUFromRAndI(double r, double i) {
 		System.out.println("Berechne U mit R: "+r+" und I: "+i+". Ergibt U= "+r*i);
 		return r*i;
@@ -94,7 +94,7 @@ public class Calculator {
 		System.out.println("Berechne U mit P: "+p+" und R: "+r+". Ergibt U= "+p*r);
 		return Math.sqrt(p*r);
 	}
-	// Current Formulas for U End
+	// Formulas for U End
 	
 	// Leistungsformeln for P Start
 	
@@ -116,7 +116,7 @@ public class Calculator {
 	// Leistungsformlen for P End
 
 	
-	// Current Formulas for I Start
+	// Formulas for I Start
 	
 	public double calculateIFromPAndR(double P, double R) {
 		System.out.println("Berechne I mit P: "+P+" und R: "+R+". Ergibt I= "+Math.sqrt(P/R));
@@ -133,9 +133,9 @@ public class Calculator {
 		return U/R;
 	}
 	
-	// Current Formulas for I End
+	// Formulas for I End
 	
-	// Current Formulas for R Start
+	// Formulas for R Start
     public double calculateRFromUAndI(double u, double i) {
 		System.out.println("Berechne R mit U: "+u+" und I: "+i+". Ergibt R= "+u/i);
         return u / i;
@@ -150,5 +150,5 @@ public class Calculator {
     	System.out.println("Berechne R mit U: "+u+" und P: "+p+". Ergibt R= "+Math.pow(2, u) / p);
         return Math.pow(2, u) / p;
     }
-    // Current Formulas for R End
+    // Formulas for R End
 }
