@@ -1,6 +1,8 @@
 package application;
 
 import java.io.FileInputStream;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javafx.application.Application;
 import javafx.scene.control.Alert;
@@ -28,7 +30,7 @@ public class Main extends Application {
 			Pane root = new Pane();
 
 			// Creating an image
-			Image image = new Image(new FileInputStream("bin\\application\\formelradelektronik.gif"));
+			Image image = new Image(new FileInputStream("src/application/formelradelektronik.gif"));
 			ImageView imageView = new ImageView(image);
 			imageView.setX(10);
 			imageView.setY(10);
@@ -87,6 +89,74 @@ public class Main extends Application {
             alert.setContentText("Bitte geben Sie genau 2 Werte ein!");
 			
 			btnBerechnen.setOnAction(e -> {
+
+				String checkInputs1 = "^[0-9]{1,20}.[0-9]{1,20}$";
+				String checkInputs2 = "^[0-9]{1,20}$";
+				String checkInputs3 = "^[0-9]{1,20}.[0-9]{1,20}[E][-\0-9]{1,3}$";
+
+				Pattern patternCheckInputs1 = Pattern.compile(checkInputs1);
+				Pattern patternCheckInputs2 = Pattern.compile(checkInputs2);
+				Pattern patternCheckInputs3 = Pattern.compile(checkInputs3);
+				Matcher matcherCheckInputs1 = patternCheckInputs1.matcher(txLeistung.getText());
+				Matcher matcherCheckInputs2 = patternCheckInputs2.matcher(txLeistung.getText());
+				Matcher matcherCheckInputs3 = patternCheckInputs3.matcher(txLeistung.getText());
+
+				boolean regex = false;
+
+				if (matcherCheckInputs1.matches() || matcherCheckInputs2.matches() || matcherCheckInputs3.matches()) {
+					regex = true;
+				}
+
+				if (!regex) {
+					txLeistung.setText("");
+
+				}
+
+				matcherCheckInputs1 = patternCheckInputs1.matcher(txSpannung.getText());
+				matcherCheckInputs2 = patternCheckInputs2.matcher(txSpannung.getText());
+				matcherCheckInputs3 = patternCheckInputs3.matcher(txSpannung.getText());
+
+				regex = false;
+
+				if (matcherCheckInputs1.matches() || matcherCheckInputs2.matches() || matcherCheckInputs3.matches()) {
+					regex = true;
+				}
+
+				if (!regex) {
+					txSpannung.setText("");
+
+				}
+
+				matcherCheckInputs1 = patternCheckInputs1.matcher(txStrom.getText());
+				matcherCheckInputs2 = patternCheckInputs2.matcher(txStrom.getText());
+				matcherCheckInputs3 = patternCheckInputs3.matcher(txStrom.getText());
+
+				regex = false;
+
+				if (matcherCheckInputs1.matches() || matcherCheckInputs2.matches() || matcherCheckInputs3.matches()) {
+					regex = true;
+				}
+
+				if (!regex) {
+					txStrom.setText("");
+
+				}
+
+				matcherCheckInputs1 = patternCheckInputs1.matcher(txWiderstand.getText());
+				matcherCheckInputs2 = patternCheckInputs2.matcher(txWiderstand.getText());
+				matcherCheckInputs3 = patternCheckInputs3.matcher(txWiderstand.getText());
+
+				regex = false;
+
+				if (matcherCheckInputs1.matches() || matcherCheckInputs2.matches() || matcherCheckInputs3.matches()) {
+					regex = true;
+				}
+
+				if (txWiderstand.getText().isEmpty() || !regex) {
+					txWiderstand.setText("");
+
+				}
+
 				double leistung = 0.0;
 				double spannung = 0.0;
 				double strom = 0.0;
