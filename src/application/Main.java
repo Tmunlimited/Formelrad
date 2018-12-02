@@ -82,9 +82,21 @@ public class Main extends Application {
 			btnBerechnen.setText("Berechnen");
 			root.getChildren().add(btnBerechnen);
 			
+			Button btnClear = new Button();
+			btnClear.relocate(200, 445);
+			btnClear.setText("Löschen");
+			root.getChildren().add(btnClear);
+			
 			Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setHeaderText("Achtung");
             alert.setContentText("Bitte geben Sie genau 2 Werte ein!");
+			
+            btnClear.setOnAction(e -> {
+            	txLeistung.setText("");
+            	txSpannung.setText("");
+            	txStrom.setText("");
+            	txWiderstand.setText("");
+            });
 			
 			btnBerechnen.setOnAction(e -> {
 				double leistung = 0.0;
