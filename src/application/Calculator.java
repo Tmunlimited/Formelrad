@@ -55,8 +55,8 @@ public class Calculator {
 				spannung= calculateUFromPAndI(leistung, strom);
 				widerstand = calculateRFromPAndI(leistung,strom);
 			} else if(widerstand !=0) {
-				spannung = calculateUFromPAndR(leistung,spannung);
-				strom= calculateIFromPAndR(leistung,spannung);
+				spannung = calculateUFromPAndR(leistung,widerstand);
+				strom= calculateIFromPAndR(leistung,widerstand);
 			}
 		} else if(spannung!=0) {
 			if(strom!=0) {
@@ -78,7 +78,7 @@ public class Calculator {
 	/* Hier die Methoden mit den Formlen hinzuf�gen
 	 */
 
-	// Leistungsformeln for U Start
+	// Formulas for U Start
 	public double calculateUFromRAndI(double r, double i) {
 		return r*i;
 	}
@@ -91,7 +91,7 @@ public class Calculator {
 	public double calculateUFromPAndR(double p, double r) {
 		return Math.sqrt(p*r);
 	}
-	// Current Formulas for U End
+	// Formulas for U End
 	
 	// Leistungsformeln for P Start
 	
@@ -110,7 +110,7 @@ public class Calculator {
 	// Leistungsformlen for P End
 
 	
-	// Current Formulas for I Start
+	// Formulas for I Start
 	
 	public double calculateIFromPAndR(double P, double R) {
 		return Math.sqrt(P/R);
@@ -124,9 +124,9 @@ public class Calculator {
 		return U/R;
 	}
 	
-	// Current Formulas for I End
+	// Formulas for I End
 	
-	// Current Formulas for R Start
+	// Formulas for R Start
     public double calculateRFromUAndI(double u, double i) {
         return u / i;
     }
@@ -138,5 +138,5 @@ public class Calculator {
     public double calculateRFromUAndP(double u, double p) {
         return Math.pow(2, u) / p;
     }
-    // Current Formulas for R End
+    // Formulas for R End
 }
