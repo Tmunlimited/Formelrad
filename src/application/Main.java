@@ -3,6 +3,7 @@ package application;
 import java.io.FileInputStream;
 
 import javafx.application.Application;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,10 +16,12 @@ import javafx.scene.text.Font;
 
 /**
  * Formelrad Application
+ *
  * @author Peter Rutschmann, modified by Samuel Dubler & Josua Koglin
- * @version 1.0 - 25.11.18
+ * @version 2.0 - 2.12.18
  */
 public class Main extends Application {
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -79,38 +82,74 @@ public class Main extends Application {
 			btnBerechnen.setText("Berechnen");
 			root.getChildren().add(btnBerechnen);
 			
+			Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("Achtung");
+            alert.setContentText("Bitte geben Sie genau 2 Werte ein!");
+			
 			btnBerechnen.setOnAction(e -> {
 				double leistung = 0.0;
 				double spannung = 0.0;
 				double strom = 0.0;
 				double widerstand = 0.0;
+				double counter = 0;
+				boolean leistungSet = false;
+				boolean spannungSet = false;
+				boolean stromSet = false;
+				boolean widerstandSet = false;
+				txLeistung.setStyle("-fx-text-fill: black;");
+				txSpannung.setStyle("-fx-text-fill: black;");
+				txStrom.setStyle("-fx-text-fill: black;");
+				txWiderstand.setStyle("-fx-text-fill: black;");
 				if(!txLeistung.getText().isEmpty()) {
 					leistung=Double.parseDouble(txLeistung.getText());
+					leistungSet=true;
+					counter++;
 				}
 				if(!txSpannung.getText().isEmpty()) {
 					spannung=Double.parseDouble(txSpannung.getText());
+					spannungSet=true;
+					counter++;
 				}
 				if(!txStrom.getText().isEmpty()) {
 					strom=Double.parseDouble(txStrom.getText());
+					stromSet=true;
+					counter++;
 				}
 				if(!txWiderstand.getText().isEmpty()) {
 					widerstand=Double.parseDouble(txWiderstand.getText());
+					widerstandSet=true;
+					counter++;
 				}
-				Calculator myCalculator = new Calculator(
-						leistung,
-						spannung,
-						strom,
-						widerstand);
-				System.out.print("Vorher:  ");
-				System.out.println(myCalculator.toString());
-				myCalculator.calculate();
-				System.out.print("Nachher: ");
-				System.out.println(myCalculator.toString());
-					
-				txLeistung.setText(Double.toString(myCalculator.getLeistung()));
-				txSpannung.setText(Double.toString(myCalculator.getSpannung()));
-				txStrom.setText(Double.toString(myCalculator.getStrom()));
-				txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+				if (counter != 2) {
+                    alert.showAndWait();
+                } else {
+					Calculator myCalculator = new Calculator(
+							leistung,
+							spannung,
+							strom,
+							widerstand);
+					System.out.print("Vorher:  ");
+					System.out.println(myCalculator.toString());
+					myCalculator.calculate();
+					System.out.print("Nachher: ");
+					System.out.println(myCalculator.toString());
+					if(!leistungSet) {
+						txLeistung.setText(Double.toString(myCalculator.getLeistung()));
+						txLeistung.setStyle("-fx-text-fill: red;");
+					}
+					if(!spannungSet) {
+						txSpannung.setText(Double.toString(myCalculator.getSpannung()));
+						txSpannung.setStyle("-fx-text-fill: red;");
+					}
+					if(!stromSet) {	
+						txStrom.setText(Double.toString(myCalculator.getStrom()));
+						txStrom.setStyle("-fx-text-fill: red;");
+					}
+					if(!widerstandSet) {
+						txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+						txWiderstand.setStyle("-fx-text-fill: red;");
+					}
+				}
 			});
 
 			Scene scene = new Scene(root, 330, 490);
