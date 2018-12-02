@@ -3,7 +3,7 @@ package application;
 /**
  * Berechnet das Formelrad
  * @author Peter Rutschmann, modified by Samuel Dubler & Josua Koglin
- * @version 1.0 - 25.11.18
+ * @version 2.0 - 2.12.18
  */
 public class Calculator {
 	private double leistung;
